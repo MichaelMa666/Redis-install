@@ -91,6 +91,56 @@ root      6353 30683  0 20:33 pts/0    00:00:00 grep redis
 
 We can see the redis process is running on the background.
 
-5.
+5.sign in client
+
+$ /usr/local/redis/bin/redis-cli
+
+there will show 
+
+$127.0.0.1:6379>
+
+$127.0.0.1:6379>
+
+$127.0.0.1:6379>
+
+set key and value ,delete the key :
+
+127.0.0.1:6379> set hello world
+
+OK
+
+127.0.0.1:6379> get hello
+
+"world"
+
+127.0.0.1:6379> del hello
+
+(integer) 1
+
+127.0.0.1:6379> get hello
+
+(nil)
+
+127.0.0.1:6379>
+
+6.exit and close the service
+
+$exit
+
+$netstat -tunpl | grep 6379
+
+tcp        0      0 0.0.0.0:6379                0.0.0.0:*                   LISTEN      6349/./redis-server
+
+tcp        0      0 :::6379                     :::*                        LISTEN      6349/./redis-server
+
+$pkill redis-server
+
+$netstat -tunpl | grep 6379
+
+$
+
+It's ok...
+
+
 
 
